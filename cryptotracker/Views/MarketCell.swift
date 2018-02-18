@@ -58,6 +58,8 @@ class MarketCell: UITableViewCell {
         sevenDayPill.backgroundColor = (crypto.percentChangeSevenDays > 0 ? StyleConstants.color.emerald : StyleConstants.color.primaryRed)
     }
     
+    
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         let views: [UIView] = [logoImageView, logoContainer, rankContainer, percentStack, amountStack]

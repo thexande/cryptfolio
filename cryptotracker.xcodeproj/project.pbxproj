@@ -31,6 +31,7 @@
 		B02347171FCA0C28007E4438 /* NSNumerFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02347161FCA0C28007E4438 /* NSNumerFormatter.swift */; };
 		B02347191FD345E7007E4438 /* gears.json in Resources */ = {isa = PBXBuildFile; fileRef = B02347181FD345E7007E4438 /* gears.json */; };
 		B0959D1B1FC8A3A10028F404 /* FontAwesomeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0959D1A1FC8A3A10028F404 /* FontAwesomeHelper.swift */; };
+		B0B7AC972038DE0800FBE0C5 /* rejection.json in Resources */ = {isa = PBXBuildFile; fileRef = B0B7AC962038DE0800FBE0C5 /* rejection.json */; };
 		EF538B0C2FFEA7D351E1C5C1 /* Pods_cryptotrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2B67DD15C5CBAFD450CF1EA /* Pods_cryptotrackerUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +85,7 @@
 		B02347161FCA0C28007E4438 /* NSNumerFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNumerFormatter.swift; sourceTree = "<group>"; };
 		B02347181FD345E7007E4438 /* gears.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = gears.json; sourceTree = "<group>"; };
 		B0959D1A1FC8A3A10028F404 /* FontAwesomeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontAwesomeHelper.swift; sourceTree = "<group>"; };
+		B0B7AC962038DE0800FBE0C5 /* rejection.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rejection.json; sourceTree = "<group>"; };
 		CE155306C2CCE8D06D359624 /* Pods-cryptotrackerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cryptotrackerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-cryptotrackerUITests/Pods-cryptotrackerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D8BEB0F1EFDC20A100237532 /* Pods_cryptotracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cryptotracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC208158B57907E3F4655452 /* Pods-cryptotracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cryptotracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-cryptotracker/Pods-cryptotracker.release.xcconfig"; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 				B01A35FD1FC8A129007A02F5 /* AppDelegate.swift */,
 				B01A36041FC8A129007A02F5 /* Assets.xcassets */,
 				B02347181FD345E7007E4438 /* gears.json */,
+				B0B7AC962038DE0800FBE0C5 /* rejection.json */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B02347191FD345E7007E4438 /* gears.json in Resources */,
+				B0B7AC972038DE0800FBE0C5 /* rejection.json in Resources */,
 				B01A36081FC8A129007A02F5 /* LaunchScreen.storyboard in Resources */,
 				B01A36051FC8A129007A02F5 /* Assets.xcassets in Resources */,
 			);
