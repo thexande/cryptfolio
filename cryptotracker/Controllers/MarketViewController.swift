@@ -109,11 +109,11 @@ class MarketViewController: UIViewController {
                 return CryptoCurrencyHelper.fetchDescription(for: crypto)
             }).then { cryptoDescriptions -> Void in
                 RealmCrudHelper.writeCryptos(cryptoDescriptions)
-                DispatchQueue.main.async {
+                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
                     self?.refreshControl.endRefreshing()
                     self?.reloadRealmCryptos()
                     self?.tableView.reloadData()
-                }
+                })
                 }.catch(execute: { (error) in
                     print(error.localizedDescription)
                 })

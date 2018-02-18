@@ -18,16 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch_small" translatesAutoresizingMaskIntoConstraints="NO" id="d39-PC-tD0">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cryptfolio" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kP-f9-vK1">
+                                <rect key="frame" x="150" y="323" width="75" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="d39-PC-tD0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Pnz-tA-BL5"/>
-                            <constraint firstItem="d39-PC-tD0" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="SrH-MJ-bkb"/>
-                            <constraint firstItem="d39-PC-tD0" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="UO2-t5-rPI"/>
-                            <constraint firstItem="d39-PC-tD0" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="qrr-jR-1qd"/>
+                            <constraint firstItem="7kP-f9-vK1" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="RJg-kX-Rcw"/>
+                            <constraint firstItem="7kP-f9-vK1" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="xFX-IL-R0G"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -37,7 +38,4 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="launch_small" width="414" height="736"/>
-    </resources>
 </document>
