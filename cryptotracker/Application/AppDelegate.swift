@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 struct StyleConstants {
     struct color {
@@ -50,6 +51,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let tabBarAppear = UITabBar.appearance()
 //        tabBarAppear.barTintColor = StyleConstants.color.primaryGreen
 //        tabBarAppear.tintColor = UIColor.white
+        
+        
+        
+        do {
+            let realm = try Realm()
+            debugPrint("Path to realm file: " + realm.configuration.fileURL!.absoluteString)
+        } catch let error {
+            print(error.localizedDescription)
+        }
+        
         return true
     }
 

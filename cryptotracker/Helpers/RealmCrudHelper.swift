@@ -26,8 +26,7 @@ class RealmCrudHelper {
                 guard let description = cryptoDescription.description, !description.contains("<") else { return "" }
                 return description
             }()
-            realmCrypto
-                .id = cryptoDescription.crypto.id
+            realmCrypto.id = cryptoDescription.crypto.id
             realmCrypto.name = cryptoDescription.crypto.name
             realmCrypto.symbol = cryptoDescription.crypto.symbol
             realmCrypto.rank = Int(cryptoDescription.crypto.rank) ?? 0
@@ -42,7 +41,7 @@ class RealmCrudHelper {
             realmCrypto.percentChangeSevenDays = Double(cryptoDescription.crypto.percentChangeSevenDays ?? "") ?? 0
             realmCrypto.percentChangeTwentyFourHour = Double(cryptoDescription.crypto.percentChangeTwentyFourHour) ?? 0
             realmCrypto.lastUpdated = cryptoDescription.crypto.lastUpdated
-            realmCrypto.iconUrl = "https://files.coinmarketcap.com/static/img/coins/128x128/\(cryptoDescription.crypto.id).png"
+            realmCrypto.iconUrl = "https://coincodex.com/en/resources/images/admin/coins/\(cryptoDescription.crypto.name.replacingOccurrences(of: " ", with: "-")).png:resizebox?180x180"
             return realmCrypto
         }
         addRealmObjects(realmCryptos)
