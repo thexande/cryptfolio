@@ -169,11 +169,11 @@
 		B01A35FC1FC8A129007A02F5 /* cryptotracker */ = {
 			isa = PBXGroup;
 			children = (
+				B01A36091FC8A129007A02F5 /* Info.plist */,
 				B02347031FC92CA3007E4438 /* Views */,
 				B0228B761FC8DEB6003D5B57 /* Models */,
 				B0228B751FC8DEA6003D5B57 /* Services */,
 				B0228B721FC8ABF7003D5B57 /* Extensions */,
-				B01A36091FC8A129007A02F5 /* Info.plist */,
 				B0959D191FC8A2970028F404 /* Application */,
 				B0959D181FC8A26B0028F404 /* Configuration */,
 				B0959D171FC8A2650028F404 /* Controllers */,
