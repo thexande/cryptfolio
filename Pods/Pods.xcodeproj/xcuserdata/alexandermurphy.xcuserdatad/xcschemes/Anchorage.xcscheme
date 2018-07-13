@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '2BA551AC21EC573D372C22914CC1E446'
-               BlueprintName = 'Anchorage'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Anchorage.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "EDFADDD27E9AE133283F4BFCC355134F"
+               BlueprintName = "Anchorage"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "Anchorage.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

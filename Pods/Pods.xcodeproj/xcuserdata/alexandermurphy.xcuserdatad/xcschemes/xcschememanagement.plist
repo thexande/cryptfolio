@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>HydraAsync.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-cryptotracker.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -30,11 +35,6 @@
 			<false/>
 		</dict>
 		<key>Pods-cryptotrackerUITests.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>PromiseKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

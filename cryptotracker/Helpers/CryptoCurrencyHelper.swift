@@ -1,5 +1,5 @@
 import Foundation
-import PromiseKit
+import Hydra
 
 struct UrlConstants {
     static let coinMarketCapTickerUrl: URL = URL(string: "https://api.coinmarketcap.com/v1/ticker/")!
@@ -47,7 +47,7 @@ class CryptoCurrencyHelper {
     }
     
     static func fetchDescription(for ticker: String) -> Promise<String?> {
-        return Promise { resolve, reject in
+        return Promise<String?>(in: .background, { resolve, reject, _ in
             let url = URL(string: "https://krausefx.github.io/crypto-summaries/coins/\(ticker.lowercased())-5.txt")!
             URLSession.shared.dataTask(with: url) { (data, response, error) in
                 guard let data = data, let string = String(data: data, encoding: String.Encoding.utf8) else {
@@ -55,7 +55,7 @@ class CryptoCurrencyHelper {
                     return
                 }
                 resolve(string)
-                }.resume()
-        }
+            }.resume()
+        })
     }
 }

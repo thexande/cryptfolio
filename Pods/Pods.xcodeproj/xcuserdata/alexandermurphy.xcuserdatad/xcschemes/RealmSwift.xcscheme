@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -13,11 +13,11 @@
             buildForProfiling = "YES"
             buildForArchiving = "YES">
             <BuildableReference
-               BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'FDF1043899BF0AB74D249D4D1BC427A4'
-               BlueprintName = 'RealmSwift'
-               ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'RealmSwift.framework'>
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "0CD51D861849AE6FF8F31CDC4D81E025"
+               BlueprintName = "RealmSwift"
+               ReferencedContainer = "container:Pods.xcodeproj"
+               BuildableName = "RealmSwift.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

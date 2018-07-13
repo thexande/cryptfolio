@@ -12,7 +12,7 @@ import Anchorage
 import SDWebImage
 import Realm
 import RealmSwift
-import PromiseKit
+import Hydra
 import Lottie
 
 
@@ -105,18 +105,20 @@ class MarketViewController: UIViewController {
     
     @objc func refreshData() {
         CryptoCurrencyHelper.fetchCryptos(url: UrlConstants.coinMarketCapTickerUrl) { [weak self] (cryptos) in
-            _ = PromiseKit.when(fulfilled: cryptos.map { crypto in
+            let descriptionPromises = cryptos.map { crypto in
                 return CryptoCurrencyHelper.fetchDescription(for: crypto)
-            }).then { cryptoDescriptions -> Void in
+            }
+            
+            all(descriptionPromises).then { cryptoDescriptions in
                 RealmCrudHelper.writeCryptos(cryptoDescriptions)
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1, execute: {
                     self?.refreshControl.endRefreshing()
                     self?.reloadRealmCryptos()
                     self?.tableView.reloadData()
                 })
-                }.catch(execute: { (error) in
+                }.catch { (error) in
                     print(error.localizedDescription)
-                })
+                }
         }
     }
     
@@ -132,19 +134,20 @@ class MarketViewController: UIViewController {
         loadingViewController.modalPresentationStyle = .overFullScreen
         self.present(loadingViewController, animated: false, completion: nil)
         CryptoCurrencyHelper.fetchCryptos(url: UrlConstants.coinMarketCapTickerUrl) { [weak self] (cryptos) in
-            
-            _ = PromiseKit.when(fulfilled: cryptos.map { crypto in
+            let cryptoPromises = cryptos.map { crypto in
                 return CryptoCurrencyHelper.fetchDescription(for: crypto)
-            }).then { cryptoDescriptions -> Void in
+            }
+            
+            all(cryptoPromises).then { cryptoDescriptions -> Void in
                 RealmCrudHelper.writeCryptos(cryptoDescriptions)
                 DispatchQueue.main.async {
                     self?.loadingViewController.dismissFade()
                     self?.reloadRealmCryptos()
                     self?.tableView.reloadData()
                 }
-                }.catch(execute: { (error) in
+                }.catch { (error) in
                     print(error.localizedDescription)
-                })
+            }
         }
     }
     

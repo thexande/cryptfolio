@@ -32,6 +32,7 @@
 		B02347191FD345E7007E4438 /* gears.json in Resources */ = {isa = PBXBuildFile; fileRef = B02347181FD345E7007E4438 /* gears.json */; };
 		B0959D1B1FC8A3A10028F404 /* FontAwesomeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0959D1A1FC8A3A10028F404 /* FontAwesomeHelper.swift */; };
 		B0B7AC972038DE0800FBE0C5 /* rejection.json in Resources */ = {isa = PBXBuildFile; fileRef = B0B7AC962038DE0800FBE0C5 /* rejection.json */; };
+		B0EFF6D420F6F90700A76633 /* CryptoCurrencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EFF6D320F6F90700A76633 /* CryptoCurrencyService.swift */; };
 		EF538B0C2FFEA7D351E1C5C1 /* Pods_cryptotrackerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2B67DD15C5CBAFD450CF1EA /* Pods_cryptotrackerUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +87,7 @@
 		B02347181FD345E7007E4438 /* gears.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = gears.json; sourceTree = "<group>"; };
 		B0959D1A1FC8A3A10028F404 /* FontAwesomeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontAwesomeHelper.swift; sourceTree = "<group>"; };
 		B0B7AC962038DE0800FBE0C5 /* rejection.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rejection.json; sourceTree = "<group>"; };
+		B0EFF6D320F6F90700A76633 /* CryptoCurrencyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCurrencyService.swift; sourceTree = "<group>"; };
 		CE155306C2CCE8D06D359624 /* Pods-cryptotrackerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cryptotrackerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-cryptotrackerUITests/Pods-cryptotrackerUITests.release.xcconfig"; sourceTree = "<group>"; };
 		D8BEB0F1EFDC20A100237532 /* Pods_cryptotracker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_cryptotracker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC208158B57907E3F4655452 /* Pods-cryptotracker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-cryptotracker.release.xcconfig"; path = "Pods/Target Support Files/Pods-cryptotracker/Pods-cryptotracker.release.xcconfig"; sourceTree = "<group>"; };
@@ -172,10 +174,8 @@
 				B01A36091FC8A129007A02F5 /* Info.plist */,
 				B02347031FC92CA3007E4438 /* Views */,
 				B0228B761FC8DEB6003D5B57 /* Models */,
-				B0228B751FC8DEA6003D5B57 /* Services */,
 				B0228B721FC8ABF7003D5B57 /* Extensions */,
 				B0959D191FC8A2970028F404 /* Application */,
-				B0959D181FC8A26B0028F404 /* Configuration */,
 				B0959D171FC8A2650028F404 /* Controllers */,
 				B0959D161FC8A2600028F404 /* Helpers */,
 			);
@@ -209,13 +209,6 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		B0228B751FC8DEA6003D5B57 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		B0228B761FC8DEB6003D5B57 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +235,7 @@
 				B02347121FC95BEF007E4438 /* RealmCrudHelper.swift */,
 				B02347141FC95C38007E4438 /* CryptoCurrencyHelper.swift */,
 				B02347161FCA0C28007E4438 /* NSNumerFormatter.swift */,
+				B0EFF6D320F6F90700A76633 /* CryptoCurrencyService.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -256,13 +250,6 @@
 				B02347101FC94C1C007E4438 /* CryptoDetailViewController.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		B0959D181FC8A26B0028F404 /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Configuration;
 			sourceTree = "<group>";
 		};
 		B0959D191FC8A2970028F404 /* Application */ = {
@@ -289,7 +276,6 @@
 				B01A35F71FC8A129007A02F5 /* Frameworks */,
 				B01A35F81FC8A129007A02F5 /* Resources */,
 				1EC4CFBF9178976CBC51E09E /* [CP] Embed Pods Frameworks */,
-				5F359EB713CAD632AEA34882 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -308,8 +294,6 @@
 				B01A360A1FC8A129007A02F5 /* Sources */,
 				B01A360B1FC8A129007A02F5 /* Frameworks */,
 				B01A360C1FC8A129007A02F5 /* Resources */,
-				E52D3B1E8445CBD97F2CBEF2 /* [CP] Embed Pods Frameworks */,
-				662F77D02BBC27F8AE30346A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -329,8 +313,6 @@
 				B01A36151FC8A129007A02F5 /* Sources */,
 				B01A36161FC8A129007A02F5 /* Frameworks */,
 				B01A36171FC8A129007A02F5 /* Resources */,
-				8E8D621313C3917689B5A11A /* [CP] Embed Pods Frameworks */,
-				E86B899007D137547C592660 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -426,7 +408,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-cryptotracker/Pods-cryptotracker-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Anchorage/Anchorage.framework",
 				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
-				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/HydraAsync/Hydra.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
@@ -438,7 +420,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Anchorage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesome_swift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hydra.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
@@ -469,36 +451,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5F359EB713CAD632AEA34882 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cryptotracker/Pods-cryptotracker-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		662F77D02BBC27F8AE30346A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cryptotrackerTests/Pods-cryptotrackerTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		815EB368258335C712FAAA43 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -515,21 +467,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8E8D621313C3917689B5A11A /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cryptotrackerUITests/Pods-cryptotrackerUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		A3A9C2B75CE54F55D0A4ECE7 /* [CP] Check Pods Manifest.lock */ = {
@@ -550,36 +487,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E52D3B1E8445CBD97F2CBEF2 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cryptotrackerTests/Pods-cryptotrackerTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E86B899007D137547C592660 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-cryptotrackerUITests/Pods-cryptotrackerUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -588,6 +495,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0228B6F1FC8A614003D5B57 /* MarketViewController.swift in Sources */,
+				B0EFF6D420F6F90700A76633 /* CryptoCurrencyService.swift in Sources */,
 				B02347151FC95C38007E4438 /* CryptoCurrencyHelper.swift in Sources */,
 				B02347171FCA0C28007E4438 /* NSNumerFormatter.swift in Sources */,
 				B0228B741FC8AC01003D5B57 /* UIColor.swift in Sources */,
