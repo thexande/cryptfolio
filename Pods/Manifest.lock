@@ -1,20 +1,20 @@
 PODS:
   - Anchorage (4.2.4)
-  - FontAwesome.swift (1.3.2)
+  - FontAwesome.swift (1.4.3)
   - HydraAsync (1.2.1)
   - lottie-ios (2.5.0)
-  - Realm (3.7.4):
-    - Realm/Headers (= 3.7.4)
-  - Realm/Headers (3.7.4)
-  - RealmSwift (3.7.4):
-    - Realm (= 3.7.4)
+  - Realm (3.7.6):
+    - Realm/Headers (= 3.7.6)
+  - Realm/Headers (3.7.6)
+  - RealmSwift (3.7.6):
+    - Realm (= 3.7.6)
   - RxRealm (0.7.5):
     - RealmSwift (~> 3.0)
     - RxSwift (~> 4.0)
   - RxSwift (4.2.0)
-  - SDWebImage (4.4.1):
-    - SDWebImage/Core (= 4.4.1)
-  - SDWebImage/Core (4.4.1)
+  - SDWebImage (4.4.2):
+    - SDWebImage/Core (= 4.4.2)
+  - SDWebImage/Core (4.4.2)
 
 DEPENDENCIES:
   - Anchorage
@@ -40,14 +40,14 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Anchorage: f855157310859280c706cc0b9c9281c21702f515
-  FontAwesome.swift: b4e4c8ccbbecb12f9b592bc533ff237af3706667
+  FontAwesome.swift: 4b9ba1e1f3418a626f3ab67b230856ab6eb4860f
   HydraAsync: 8f2ab62d57e140b4ca587ae0f66e1eb04e8e6965
   lottie-ios: d699fdee68d7b63e721d949388b015fef1aaa4ac
-  Realm: a469bb59e33f9926102ccaea4349822c53b9117e
-  RealmSwift: a45861b21c180f5cf0f122144b9759fa8dde3e9e
+  Realm: 9eaecad54712d6246d08ba34c10f354e4715d7d3
+  RealmSwift: 1fe08b4ebaeeaacf17f9ba0343f7b25c9fc31fa6
   RxRealm: a6c6c0a07cb61f34209969ca6657734edfdfff30
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
-  SDWebImage: 47e9b5b925cbce75946c23f0c42dd19464189af4
+  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
 
 PODFILE CHECKSUM: 0444f3dc92867a5cb548982cae0ad5e0e9f54210
 

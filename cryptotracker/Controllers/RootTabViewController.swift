@@ -14,7 +14,7 @@ import RealmSwift
 class RootTabViewController: UITabBarController {
     let tabOneItem: UIViewController = {
         let vc = UINavigationController(rootViewController: MarketViewController())
-        let icon = FontAwesomeHelper.iconToImage(icon: FontAwesome.lineChart, color: .black, width: 35, height: 35)
+        let icon = FontAwesomeHelper.iconToImage(icon: FontAwesome.chartLine, color: .black, width: 35, height: 35)
         let item = UITabBarItem(title: "market".uppercased(), image: icon, selectedImage: icon)
         vc.navigationBar.prefersLargeTitles = true
         vc.navigationItem.largeTitleDisplayMode = .always
@@ -24,7 +24,7 @@ class RootTabViewController: UITabBarController {
     
     let tabTwoItem: UIViewController = {
         let vc = UINavigationController(rootViewController: MyHoldingsViewController())
-        let icon = FontAwesomeHelper.iconToImage(icon: FontAwesome.dollar, color: .black, width: 35, height: 35)
+        let icon = FontAwesomeHelper.iconToImage(icon: FontAwesome.moneyBill, color: .black, width: 35, height: 35)
         let item = UITabBarItem(title: "my holdings".uppercased(), image: icon, selectedImage: icon)
         vc.navigationBar.prefersLargeTitles = true
         vc.navigationItem.largeTitleDisplayMode = .always
