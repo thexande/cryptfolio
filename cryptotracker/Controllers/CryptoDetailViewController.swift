@@ -76,7 +76,7 @@ class CryptoDetailViewController: UITableViewController {
     
     init(_ crypto: RealmCryptoCurrency) {
         self.crypto = crypto
-        super.init(nibName: nil, bundle: nil)
+        super.init(style: .grouped)
         title = crypto.symbol
         
         let titleImage = UIImageView()
@@ -101,19 +101,11 @@ class CryptoDetailViewController: UITableViewController {
         return 30
     }
     
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView()
-        let title = UILabel()
-        title.font = UIFont.systemFont(ofSize: 10, weight: .semibold)
-        view.backgroundColor = StyleConstants.color.primaryGray
-        view.addSubview(title)
-        
-        title.centerYAnchor == view.centerYAnchor
-        title.leadingAnchor == view.leadingAnchor + 12
-        
-        title.text = sections[section].title
-        return view
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sections[section].title.uppercased()
     }
+    
+    
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
