@@ -241,7 +241,7 @@ extension MarketViewController: UISearchBarDelegate {
     }
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         isSearching = false
-        view.sendSubview(toBack: searchEmptyStateView)
+        view.sendSubviewToBack(searchEmptyStateView)
         tableView.reloadData()
     }
 }

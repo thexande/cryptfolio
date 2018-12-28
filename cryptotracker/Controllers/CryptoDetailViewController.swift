@@ -85,7 +85,7 @@ class CryptoDetailViewController: UITableViewController {
         
         tableView.tableFooterView = UIView()
         tableView.allowsSelection = false
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 40
         
         titleImage.sd_setImage(with: URL(string: crypto.iconUrl), completed: nil)

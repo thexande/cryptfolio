@@ -60,7 +60,7 @@ class MarketCell: UITableViewCell {
     
     
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         let views: [UIView] = [logoImageView, logoContainer, rankContainer, percentStack, amountStack]
         views.forEach { view in
