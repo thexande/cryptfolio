@@ -7,7 +7,6 @@ class CryptoDescriptionCell: UITableViewCell {
     lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 12)
         label.text = self.cryptoDescription
         return label
@@ -18,6 +17,13 @@ class CryptoDescriptionCell: UITableViewCell {
         super.init(style: .default, reuseIdentifier: nil)
         contentView.addSubview(descriptionLabel)
         descriptionLabel.edgeAnchors == contentView.edgeAnchors + 12
+        
+        switch Themer.shared.currentTheme {
+        case .dark:
+            descriptionLabel.textColor = .white
+        case .light:
+            descriptionLabel.textColor = .black
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {

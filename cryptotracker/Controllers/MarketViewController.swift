@@ -15,13 +15,15 @@ import RealmSwift
 import Hydra
 import Lottie
 
-class MarketViewController: UIViewController {
+final class MarketViewController: UIViewController {
+    
     let searchController = UISearchController(searchResultsController: nil)
     fileprivate let searchEmptyStateView = SearchEmptyStateView()
     fileprivate let refreshControl = UIRefreshControl()
     var cryptos: [RealmCryptoCurrency] = []
     var filteredCryptos: [RealmCryptoCurrency] = []
     var isSearching: Bool = false
+    weak var appCoordinatorDispatch: AppCoordinatorActionsDispatching?
     
     func fetchRealmCryptos() -> [RealmCryptoCurrency] {
         do {
@@ -60,9 +62,28 @@ class MarketViewController: UIViewController {
         loadCryptos()
     }
     
+    // We are willing to become first responder to get shake motion
+    override var canBecomeFirstResponder: Bool {
+        get {
+            return true
+        }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return Themer.shared.currentTheme == .light ? .default : .lightContent
+    }
+    
+    // Enable detection of shake motion
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            print("Why are you shaking me?")
+            appCoordinatorDispatch?.userDidShake()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "market".uppercased()
+        title = "Market"
         navigationItem.titleView = segment
         tableView.tableHeaderView = self.marketHeaderView
         view.addSubview(tableView)
@@ -92,6 +113,10 @@ class MarketViewController: UIViewController {
         }
         
         refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+//        navigationItem.largeTitleDisplayMode = .always
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
+        becomeFirstResponder()
     }
     
     @objc func refreshData() {

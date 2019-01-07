@@ -30,6 +30,7 @@
 		B02347151FC95C38007E4438 /* CryptoCurrencyHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02347141FC95C38007E4438 /* CryptoCurrencyHelper.swift */; };
 		B02347171FCA0C28007E4438 /* NSNumerFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02347161FCA0C28007E4438 /* NSNumerFormatter.swift */; };
 		B02347191FD345E7007E4438 /* gears.json in Resources */ = {isa = PBXBuildFile; fileRef = B02347181FD345E7007E4438 /* gears.json */; };
+		B0614D6A21E3021E000CADAB /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0614D6921E3021E000CADAB /* UIWindow.swift */; };
 		B0959D1B1FC8A3A10028F404 /* FontAwesomeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0959D1A1FC8A3A10028F404 /* FontAwesomeHelper.swift */; };
 		B0B78A8C20FAB4B00012FD05 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B78A8B20FAB4B00012FD05 /* Double.swift */; };
 		B0B7AC972038DE0800FBE0C5 /* rejection.json in Resources */ = {isa = PBXBuildFile; fileRef = B0B7AC962038DE0800FBE0C5 /* rejection.json */; };
@@ -86,6 +87,7 @@
 		B02347141FC95C38007E4438 /* CryptoCurrencyHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCurrencyHelper.swift; sourceTree = "<group>"; };
 		B02347161FCA0C28007E4438 /* NSNumerFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNumerFormatter.swift; sourceTree = "<group>"; };
 		B02347181FD345E7007E4438 /* gears.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = gears.json; sourceTree = "<group>"; };
+		B0614D6921E3021E000CADAB /* UIWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
 		B0959D1A1FC8A3A10028F404 /* FontAwesomeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontAwesomeHelper.swift; sourceTree = "<group>"; };
 		B0B78A8B20FAB4B00012FD05 /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		B0B7AC962038DE0800FBE0C5 /* rejection.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rejection.json; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				B0228B731FC8AC01003D5B57 /* UIColor.swift */,
 				B02347081FC9353F007E4438 /* UIViewController.swift */,
 				B0B78A8B20FAB4B00012FD05 /* Double.swift */,
+				B0614D6921E3021E000CADAB /* UIWindow.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 				B0228B741FC8AC01003D5B57 /* UIColor.swift in Sources */,
 				B01A36001FC8A129007A02F5 /* RootTabViewController.swift in Sources */,
 				B02347071FC92CD0007E4438 /* MarketCell.swift in Sources */,
+				B0614D6A21E3021E000CADAB /* UIWindow.swift in Sources */,
 				B02347091FC9353F007E4438 /* UIViewController.swift in Sources */,
 				B0228B781FC8DEC7003D5B57 /* CryptoCurrency.swift in Sources */,
 				B0B78A8C20FAB4B00012FD05 /* Double.swift in Sources */,

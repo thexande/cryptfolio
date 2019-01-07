@@ -48,6 +48,15 @@ class MarketCell: UITableViewCell {
         subTitleLabel.text = crypto.name
         rankView.label.text = String(crypto.rank)
         
+        switch Themer.shared.currentTheme {
+        case .dark:
+            titleLabel.textColor = .white
+            subTitleLabel.textColor = .lightGray
+        case .light:
+            titleLabel.textColor = .black
+            subTitleLabel.textColor = .black
+        }
+        
         twentyFourHourPill.label.text = "24 hr: \(crypto.percentChangeTwentyFourHour)%"
         sevenDayPill.label.text = "7 day: \(crypto.percentChangeSevenDays)%"
         

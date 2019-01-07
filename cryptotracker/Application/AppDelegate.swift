@@ -22,37 +22,117 @@ struct StyleConstants {
     }
 }
 
+protocol AppCoordinatorActionsDispatching: AnyObject {
+    func userDidShake()
+}
+
+enum Theme {
+    case light
+    case dark
+}
+
+final class Themer {
+    static let shared = Themer()
+    // default theme
+    var currentTheme: Theme = .light
+}
+
+final class AppCoordinator {
+    
+    private var root = UINavigationController(rootViewController: MarketViewController()) {
+        didSet {
+            if
+                let app = UIApplication.shared.delegate as? AppDelegate,
+                let window = app.window {
+                window.switchRootViewController(root)
+            }
+        }
+    }
+    
+    // default theme
+    private var currentTheme: Theme = .light {
+        didSet {
+            setAppearance(with: currentTheme)
+            Themer.shared.currentTheme = currentTheme
+            root = UINavigationController(rootViewController: MarketViewController())
+        }
+    }
+    
+    init() {
+        (root.viewControllers.first as? MarketViewController)?.appCoordinatorDispatch = self
+    }
+    
+    func rootViewController() -> UIViewController {
+        // configure with default theme
+        setAppearance(with: currentTheme)
+        Themer.shared.currentTheme = currentTheme
+        return root
+    }
+    
+    
+    private func setAppearance(with theme: Theme) {
+        
+        let tint: UIColor
+        let background: UIColor
+        let style: UIBarStyle
+        let tableBackground: UIColor
+        
+        switch theme {
+        case .dark:
+            tint = StyleConstants.color.purple
+            background = .black
+            tableBackground = .darkModeTableBackground()
+            style = .black
+            UITextField.appearance().keyboardAppearance = .dark
+        case .light:
+            tint = .blue
+            background = .white
+            tableBackground = .white
+            style = .default
+            UITextField.appearance().keyboardAppearance = .light
+        }
+        
+        UINavigationBar.appearance().tintColor = tint
+        UINavigationBar.appearance().barStyle = style
+        
+        UITabBar.appearance().barStyle = style
+        UITabBar.appearance().tintColor = tint
+        
+        UITextField.appearance().tintColor = tint
+        UISearchBar.appearance().tintColor = tint
+        
+        UITableViewCell.appearance().backgroundColor = background
+        UITableView.appearance().backgroundColor = tableBackground
+    }
+}
+
+extension AppCoordinator: AppCoordinatorActionsDispatching {
+    func userDidShake() {
+        switch currentTheme {
+        case .dark:
+            currentTheme = .light
+        case .light:
+            currentTheme = .dark
+        }
+    }
+}
+
+
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    private let coordinator = AppCoordinator()
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        
-        let vc = UINavigationController(rootViewController: MarketViewController())
-        vc.navigationBar.prefersLargeTitles = true
-        vc.navigationItem.largeTitleDisplayMode = .always
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = vc
+        window?.rootViewController = coordinator.rootViewController()
         window?.makeKeyAndVisible()
-        
-//        UIApplication.shared.statusBarStyle = .lightContent
-//        let navigationBarAppearance = UINavigationBar.appearance()
-//        navigationBarAppearance.barTintColor = StyleConstants.color.primaryGreen
-//        navigationBarAppearance.tintColor = UIColor.white
-        
-        // change navigation item title color
-//        navigationBarAppearance.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
-//        navigationBarAppearance.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
-        
-//        let tabBarAppear = UITabBar.appearance()
-//        tabBarAppear.barTintColor = StyleConstants.color.primaryGreen
-//        tabBarAppear.tintColor = UIColor.white
-        
-        
         
         do {
             let realm = try Realm()

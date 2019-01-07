@@ -1,6 +1,22 @@
 import UIKit
 import Anchorage
 
+extension UIColor {
+    
+    static func darkModeTableBackground() -> UIColor {
+        return UIColor(red:0.09, green:0.09, blue:0.09, alpha:1.0)
+    }
+    
+    static func darkModeMardown() -> UIColor {
+        return UIColor(red:0.13, green:0.13, blue:0.13, alpha:1.0)
+    }
+    
+    static func appleBlue() -> UIColor {
+        return UIColor.init(red: 14.0/255, green: 122.0/255, blue: 254.0/255, alpha: 1.0)
+    }
+
+}
+
 class MarketHeaderView: UIView {
     let pillFontSize: CGFloat = 12
     lazy var totalMarketCap = makePillView(pillType: .usd)
@@ -55,6 +71,13 @@ class MarketHeaderView: UIView {
         
         stackView.horizontalAnchors == horizontalAnchors
         stackView.topAnchor == topAnchor + 12
+        
+        switch Themer.shared.currentTheme {
+        case .dark:
+            backgroundColor = .darkModeTableBackground()
+        case .light:
+            backgroundColor = .white
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
