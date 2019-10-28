@@ -27,3 +27,5 @@ DerivedData/
 
 cryptotracker.app.dSYM.zip
 cryptotracker.ipa
+
+fastlane/report.xml
