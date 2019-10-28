@@ -60,7 +60,6 @@ class MarketHeaderView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         dividerView.backgroundColor = StyleConstants.color.secondaryGray
-        backgroundColor = .white
         
         addSubview(stackView)
         addSubview(dividerView)
@@ -71,13 +70,6 @@ class MarketHeaderView: UIView {
         
         stackView.horizontalAnchors == horizontalAnchors
         stackView.topAnchor == topAnchor + 12
-        
-        switch Themer.shared.currentTheme {
-        case .dark:
-            backgroundColor = .darkModeTableBackground()
-        case .light:
-            backgroundColor = .white
-        }
     }
     
     required init?(coder aDecoder: NSCoder) {

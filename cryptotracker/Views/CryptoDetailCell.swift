@@ -12,13 +12,6 @@ class CryptoDetailCell: UITableViewCell {
         titleLabel.font = UIFont.systemFont(ofSize: 14)
         detailLabel.font = UIFont.systemFont(ofSize: 16)
         
-        switch Themer.shared.currentTheme {
-        case .dark:
-            titleLabel.textColor = .white
-        case .light:
-            titleLabel.textColor = .black
-        }
-        
         detailLabel.textColor = StyleConstants.color.secondaryGray
         
         addSubview(detailLabel)

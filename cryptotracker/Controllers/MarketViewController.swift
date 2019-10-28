@@ -23,7 +23,6 @@ final class MarketViewController: UIViewController {
     var cryptos: [RealmCryptoCurrency] = []
     var filteredCryptos: [RealmCryptoCurrency] = []
     var isSearching: Bool = false
-    weak var appCoordinatorDispatch: AppCoordinatorActionsDispatching?
     
     func fetchRealmCryptos() -> [RealmCryptoCurrency] {
         do {
@@ -60,25 +59,6 @@ final class MarketViewController: UIViewController {
     
     @objc func didPressRefresh() {
         loadCryptos()
-    }
-    
-    // We are willing to become first responder to get shake motion
-    override var canBecomeFirstResponder: Bool {
-        get {
-            return true
-        }
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return Themer.shared.currentTheme == .light ? .default : .lightContent
-    }
-    
-    // Enable detection of shake motion
-    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        if motion == .motionShake {
-            print("Why are you shaking me?")
-            appCoordinatorDispatch?.userDidShake()
-        }
     }
     
     override func viewDidLoad() {

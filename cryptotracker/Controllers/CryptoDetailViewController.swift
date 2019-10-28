@@ -17,13 +17,6 @@ class CryptoDescriptionCell: UITableViewCell {
         super.init(style: .default, reuseIdentifier: nil)
         contentView.addSubview(descriptionLabel)
         descriptionLabel.edgeAnchors == contentView.edgeAnchors + 12
-        
-        switch Themer.shared.currentTheme {
-        case .dark:
-            descriptionLabel.textColor = .white
-        case .light:
-            descriptionLabel.textColor = .black
-        }
     }
     
     required init?(coder aDecoder: NSCoder) {
