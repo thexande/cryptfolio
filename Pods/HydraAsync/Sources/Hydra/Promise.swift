@@ -115,6 +115,11 @@ public class Promise<Value> {
 		self.bodyCalled = true
 	}
 	
+    /// Initialize a promise in pending state.
+    public init() {
+        self.state = .pending
+        self.bodyCalled = true
+    }
 	
 	/// Initialize a new Promise in a rejected state with a specified error
 	///
@@ -172,6 +177,14 @@ public class Promise<Value> {
 		}
 	}
 	
+    public func resolve(_ value: Value) {
+        set(state: .resolved(value))
+    }
+    
+    public func reject(_ error: Error) {
+        set(state: .rejected(error))
+    }
+    
 	public func cancel() {
 		self.set(state: .cancelled)
 	}
@@ -239,15 +252,6 @@ public class Promise<Value> {
 				observer.call(self.state)
 			}
 			self.observers.removeAll()
-		}
-	}
-
-	
-	/// Transform given promise to a void promise.
-	@available(*, deprecated: 0.9.8, message: "Use .void var instead")
-	public func voidPromise() -> Promise<Void> {
-		return self.then { _ in
-			return ()
 		}
 	}
 	
