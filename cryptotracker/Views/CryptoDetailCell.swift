@@ -17,10 +17,10 @@ class CryptoDetailCell: UITableViewCell {
         addSubview(detailLabel)
         addSubview(titleLabel)
         
-        titleLabel.leadingAnchor == leadingAnchor + 12
+        titleLabel.leadingAnchor == readableContentGuide.leadingAnchor + 12
         titleLabel.centerYAnchor == centerYAnchor
         
-        detailLabel.trailingAnchor == trailingAnchor - 12
+        detailLabel.trailingAnchor == readableContentGuide.trailingAnchor - 12
         detailLabel.centerYAnchor == centerYAnchor
     }
     

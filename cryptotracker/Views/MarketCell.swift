@@ -74,13 +74,13 @@ class MarketCell: UITableViewCell {
         sevenDayPill.label.font = UIFont.systemFont(ofSize: self.pillFontSize, weight: .regular)
         
         percentStack.centerYAnchor == centerYAnchor
-        percentStack.trailingAnchor == trailingAnchor - 12
+        percentStack.trailingAnchor == readableContentGuide.trailingAnchor - 12
         
         amountStack.trailingAnchor == percentStack.leadingAnchor - 12
         amountStack.centerYAnchor == centerYAnchor
         
         rankView.centerYAnchor == centerYAnchor
-        rankContainer.leadingAnchor == leadingAnchor + 12
+        rankContainer.leadingAnchor == readableContentGuide.leadingAnchor
         rankContainer.widthAnchor == 36
         rankContainer.verticalAnchors == verticalAnchors
         

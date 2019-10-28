@@ -16,7 +16,8 @@ class CryptoDescriptionCell: UITableViewCell {
         self.cryptoDescription = cryptoDescription
         super.init(style: .default, reuseIdentifier: nil)
         contentView.addSubview(descriptionLabel)
-        descriptionLabel.edgeAnchors == contentView.edgeAnchors + 12
+        descriptionLabel.verticalAnchors == contentView.verticalAnchors + 12
+        descriptionLabel.horizontalAnchors == readableContentGuide.horizontalAnchors + 12
     }
     
     required init?(coder aDecoder: NSCoder) {
