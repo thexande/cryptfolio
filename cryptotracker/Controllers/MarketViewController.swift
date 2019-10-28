@@ -274,7 +274,7 @@ extension MarketViewController: UISearchBarDelegate {
 
 final class SearchEmptyStateView: UIView {
     let titleLabel = UILabel()
-    let lottieView = LOTAnimationView(name: "rejection")
+    let lottieView = AnimationView(name: "rejection")
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -282,7 +282,7 @@ final class SearchEmptyStateView: UIView {
         
         lottieView.sizeAnchors == CGSize(width: 200, height: 200)
         lottieView.centerAnchors == centerAnchors
-        lottieView.loopAnimation = true
+        lottieView.loopMode = .loop
         lottieView.play()
         
         titleLabel.horizontalAnchors == horizontalAnchors + 24

@@ -3,7 +3,7 @@ import Lottie
 import Anchorage
 
 class BlurLoadingViewController: UIViewController {
-    let animationView = LOTAnimationView(name: "gears")
+    let animationView = AnimationView(name: "gears")
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -41,7 +41,7 @@ class BlurLoadingViewController: UIViewController {
             self.blur()
             self.view.addSubview(self.animationView)
             self.animationView.play()
-            self.animationView.loopAnimation = true
+            self.animationView.loopMode = .loop
             self.animationView.centerAnchors == self.view.centerAnchors
             
             UIView.animate(withDuration: 0.5, animations: {
