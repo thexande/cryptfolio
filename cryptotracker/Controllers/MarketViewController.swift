@@ -189,11 +189,6 @@ final class MarketViewController: UIViewController {
                 return crypto1.percentChangeSevenDays > crypto2.percentChangeSevenDays
             })
             tableView.reloadData()
-        case 3:
-            cryptos = cryptos.sorted(by: { (crypto1, crypto2) -> Bool in
-                return crypto1.twentyFourHourVolumeUsd > crypto2.twentyFourHourVolumeUsd
-            })
-            tableView.reloadData()
         default: return
         }
     }
