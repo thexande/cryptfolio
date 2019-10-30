@@ -8,7 +8,6 @@ class MarketCell: UITableViewCell {
     let titleLabel = UILabel()
     let subTitleLabel = UILabel()
     lazy var logoContainer = UIStackView(arrangedSubviews: [self.titleLabel, self.subTitleLabel])
-    let rankView = PillView()
     lazy var usdPill = self.makePillView(pillType: .usd)
     lazy var btcPill = self.makePillView(pillType: .btc)
     let twentyFourHourPill = PillView()
@@ -28,15 +27,10 @@ class MarketCell: UITableViewCell {
         return view
     }()
     
-    lazy var rankContainer: UIView = {
-        let view = UIView()
-        view.addSubview(rankView)
-        return view
-    }()
-    
+
     func makePillView(pillType: CryptoPill) -> PillView {
         let view = PillView()
-        view.backgroundColor = pillType.color()
+        view.setColor(pillType.color())
         view.label.font = UIFont.systemFont(ofSize: self.pillFontSize, weight: .regular)
         return view
     }
@@ -46,7 +40,6 @@ class MarketCell: UITableViewCell {
         logoImageView.sd_setImage(with: url, completed: nil)
         titleLabel.text = crypto.symbol
         subTitleLabel.text = crypto.name
-        rankView.label.text = String(crypto.rank)
     
         twentyFourHourPill.label.text = "24 hr: \(crypto.percentChangeTwentyFourHour)%"
         sevenDayPill.label.text = "7 day: \(crypto.percentChangeSevenDays)%"
@@ -54,15 +47,15 @@ class MarketCell: UITableViewCell {
         usdPill.label.text = "USD: \(crypto.dollarPrice.currencyUS)"
         btcPill.label.text = "BTC: \(crypto.bitcoinPrice.rounded(toPlaces: 5))"
         
-        twentyFourHourPill.backgroundColor = (crypto.percentChangeTwentyFourHour > 0 ? StyleConstants.color.emerald : StyleConstants.color.primaryRed)
-        sevenDayPill.backgroundColor = (crypto.percentChangeSevenDays > 0 ? StyleConstants.color.emerald : StyleConstants.color.primaryRed)
+        twentyFourHourPill.setColor(crypto.percentChangeTwentyFourHour > 0 ? StyleConstants.color.emerald : StyleConstants.color.primaryRed)
+        sevenDayPill.setColor(crypto.percentChangeSevenDays > 0 ? StyleConstants.color.emerald : StyleConstants.color.primaryRed)
     }
     
     
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        let views: [UIView] = [logoImageView, logoContainer, rankContainer, percentStack, amountStack]
+        let views: [UIView] = [logoImageView, logoContainer, percentStack, amountStack]
         views.forEach { view in
             addSubview(view)
         }
@@ -74,17 +67,10 @@ class MarketCell: UITableViewCell {
         sevenDayPill.label.font = UIFont.systemFont(ofSize: self.pillFontSize, weight: .regular)
         
         percentStack.centerYAnchor == centerYAnchor
-        percentStack.trailingAnchor == readableContentGuide.trailingAnchor - 12
+        percentStack.trailingAnchor == readableContentGuide.trailingAnchor
         
         amountStack.trailingAnchor == percentStack.leadingAnchor - 12
         amountStack.centerYAnchor == centerYAnchor
-        
-        rankView.centerYAnchor == centerYAnchor
-        rankContainer.leadingAnchor == readableContentGuide.leadingAnchor
-        rankContainer.widthAnchor == 36
-        rankContainer.verticalAnchors == verticalAnchors
-        
-        rankView.centerAnchors == rankContainer.centerAnchors
         
         titleLabel.font = UIFont.systemFont(ofSize: 28, weight: .ultraLight)
         subTitleLabel.font = UIFont.systemFont(ofSize: 10, weight: .light)
@@ -96,7 +82,7 @@ class MarketCell: UITableViewCell {
         logoImageView.heightAnchor == 40
         logoImageView.widthAnchor == logoImageView.heightAnchor
         logoImageView.centerYAnchor == centerYAnchor
-        logoImageView.leadingAnchor == rankContainer.trailingAnchor + 12
+        logoImageView.leadingAnchor == readableContentGuide.leadingAnchor
     }
     
     required init?(coder aDecoder: NSCoder) {

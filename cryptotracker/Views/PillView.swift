@@ -18,8 +18,6 @@ class PillView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        layer.masksToBounds = true
-        backgroundColor = StyleConstants.color.purple
         addSubview(label)
         label.text = "0"
         label.textColor = .white
@@ -28,10 +26,14 @@ class PillView: UIView {
         label.bottomAnchor == bottomAnchor - 4
         label.leadingAnchor == leadingAnchor + 4
         label.trailingAnchor == trailingAnchor - 4
-        layer.masksToBounds = true
+        layer.borderWidth = 1
         layer.cornerRadius = 5
-        
         label.textAlignment = .center
+    }
+    
+    func setColor(_ color: UIColor) {
+        label.textColor = color
+        layer.borderColor = color.cgColor
     }
     
     required init?(coder aDecoder: NSCoder) {

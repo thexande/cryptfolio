@@ -37,7 +37,7 @@ class MarketHeaderView: UIView {
     
     func makePillView(pillType: CryptoPill) -> PillView {
         let view = PillView()
-        view.backgroundColor = pillType.color()
+        view.setColor(pillType.color())
         view.label.font = UIFont.systemFont(ofSize: self.pillFontSize, weight: .regular)
         return view
     }
